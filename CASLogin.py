@@ -3,10 +3,10 @@ import requests
 from bs4 import BeautifulSoup
 
 
-def login():
+def login(url):
     username = input('Please input your NetID: ')
     password = input('Please input your password: ')
-    soup = BeautifulSoup(requests.get('https://cas.sysu.edu.cn/cas/login').text, 'html.parser')
+    soup = BeautifulSoup(requests.get(url).text, 'html.parser')
     lt = soup.find('input', {'name': 'lt'})['value']
     execution = soup.find('input', {'name': 'execution'})['value']
     payload = {
@@ -17,16 +17,20 @@ def login():
         '_eventId': 'submit',
         'submit': '登录'
     }
-    return BeautifulSoup(requests.post('https://cas.sysu.edu.cn/cas/login', data=payload).text, 'html.parser')
+    response = requests.post(url, data=payload)
+    return response
 
 
-def cas_login():
-    soup = login()
-    while soup.find(id='msg').string:
+def cas_login(url):
+    response = login(url)
+    soup = BeautifulSoup(response.text, 'html.parser')
+    while soup.find(id='msg'):
         print(soup.find(id='msg').string, end="\n\n")
-        soup = login()
-    print('Log In Successful')
+        response = login(url)
+        soup = BeautifulSoup(response.text, 'html.parser')
+    print('Log In Successful', end="\n\n")
+    return response
 
 
 if __name__ == '__main__':
-    cas_login()
+    cas_login('https://cas.sysu.edu.cn/cas/login')
