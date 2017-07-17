@@ -4,6 +4,7 @@ import requests
 from CASLogin import cas_login
 
 
+def pyjw():
     url = 'https://cas.sysu.edu.cn/cas/login?service=http://uems.sysu.edu.cn/jwxt/casLogin?' \
           '_tocasurl=http://wjw.sysu.edu.cn/cas'
     resp = cas_login(url)
@@ -15,3 +16,4 @@ from CASLogin import cas_login
     print(re.findall(r'recordCount:[0-9]', result)[0])
 
 if __name__ == '__main__':
+    pyjw()
