@@ -11,10 +11,10 @@ def get_kclb(kclb):
     return d[kclb]
 
 
-def get_score():
+def get_score(username=None, password=None):
     url = 'https://cas.sysu.edu.cn/cas/login?service=http://uems.sysu.edu.cn/jwxt/casLogin?' \
           '_tocasurl=http://wjw.sysu.edu.cn/cas'
-    resp = cas_login(url)
+    resp = cas_login(url, username, password)
 
     url = re.findall(r'http://wjw.sysu.edu.cn/.*?&MU=', resp.text)[0]
     session.get(url)
