@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import requests
 import json
+import configparser
 
 
 # 获取access_token
@@ -29,11 +30,12 @@ def message_send(userid, agentid, content, access_token):
     return resp.text
 
 if __name__ == '__main__':
-	# secret
-    CorpID = corpid
-    Secret = corpsecret
-    ACCESS_TOKEN = wechat.get_access_token(CorpID, Secret)
-    UserID = "UserID1|UserID2|UserID3",
-    AgentId = 1
-    CONTENT = "hello, world"
-    print(wechat.message_send(UserID, AgentId, CONTENT, ACCESS_TOKEN))
+    config = configparser.ConfigParser()
+    config.read('config.ini')
+    CorpID = config['wechat']['CorpID']
+    Secret = config['wechat']['Secret']
+    ACCESS_TOKEN = get_access_token(CorpID, Secret)
+    UserID = config['wechat']['UserID']
+    AgentId = config['wechat']['AgentId']
+    CONTENT = 'hello, world'
+    print(message_send(UserID, AgentId, CONTENT, ACCESS_TOKEN))
