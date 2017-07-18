@@ -28,8 +28,8 @@ def main():
                 userid = config['wechat']['UserID']
                 agentid = config['wechat']['AgentId']
                 content = pyjw.show_score(result, resource['resource_id'])
-                print(content, end='\n\n')
-                print(wechat.message_send(userid, agentid, content, access_token))
+                print(content, end='\n')
+                print(wechat.message_send(userid, agentid, content, access_token), end='\n\n')
                 config['jwxt'][resource['resource_id']] = 'resource_id'
         # 更新配置文件
         with open('config.ini', 'w') as configfile:
