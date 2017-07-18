@@ -41,6 +41,13 @@ Traceback (most recent call last):
   File "main.py", line 12, in main
   File "configparser.py", line 959, in __getitem__
 KeyError: 'CAS'
-Failed to execute script score
 ```
-3. 有未知BUG导致程序结束运行
+3. 运行三十分钟后报 ```IndexError``` 错误
+```
+Traceback (most recent call last):
+  File "score.py", line 19, in <module>
+  File "sched.py", line 154, in run
+  File "score.py", line 13, in perform
+  File "main.py", line 16, in main
+IndexError: list index out of range
+```
