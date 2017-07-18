@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import re
 import configparser
 import pyjw
@@ -8,9 +9,9 @@ def main():
     # 读取配置文件
     config = configparser.ConfigParser()
     config.read('config.ini')
-    # 获取新条目
     username = config['CAS']['NetID']
     password = config['CAS']['password']
+    # 获取新条目
     text = pyjw.get_score(username, password)
     record_count = config['jwxt']['recordCount']
     new_record_count = re.findall("recordCount:.*,name", text)[0]
@@ -22,6 +23,7 @@ def main():
         result = eval(re.findall(r'\[.*\]', text)[0])
         for resource in result:
             if not (resource['resource_id']) in config['jwxt']:
+                # 组装请求，引用微信API推送文本消息
                 corpid = config['wechat']['CorpID']
                 secret = config['wechat']['Secret']
                 access_token = wechat.get_access_token(corpid, secret)

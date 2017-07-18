@@ -13,6 +13,7 @@ def login(url, username=None, password=None):
         password = input('Please input your password: ')
     response = session.get(url, cookies=session.cookies)
     soup = BeautifulSoup(response.text, 'html.parser')
+    # 防止重复登录
     if not soup.find('input') or soup.find('h2').text == 'Log In Successful':
         return response
     else:
