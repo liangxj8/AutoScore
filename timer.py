@@ -14,5 +14,6 @@ def perform(sec=60):
 
 
 if __name__ == "__main__":
+	# operate every 10 minutes
     perform(600)
     s.run()
