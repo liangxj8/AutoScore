@@ -33,6 +33,7 @@ agentid = *******
 ```
 ## 三、已知BUG
 1. 运行一段时间后获取到从大一开始的所有成绩并调用API接口发送
+
 2. 用 ```pyinstaller``` 封装后直接输入EXE文件路径运行，报 ```KeyError``` 错误
 ```
 Traceback (most recent call last):
@@ -44,6 +45,7 @@ KeyError: 'CAS'
 ```
 ### 原因：
 命令提示符所在目录下没有配置文件。
+
 3. 运行三十分钟后报 ```IndexError``` 错误（已修复）
 ```
 Traceback (most recent call last):
