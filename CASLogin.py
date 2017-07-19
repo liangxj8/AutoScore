@@ -38,7 +38,7 @@ def cas_login(url, username, password):
         print(soup.find(id='msg').string, end="\n\n")
         response = login(url)
         soup = BeautifulSoup(response.text, 'html.parser')
-        print('Log In Successful')
+    print('Log In Successful')
     return response
 
 
