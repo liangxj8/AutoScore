@@ -12,10 +12,8 @@ def login(url, username=None, password=None):
     if not password:
         password = input('Please input your password: ')
     response = session.get(url, cookies=session.cookies)
-    soup = BeautifulSoup(response.text, 'html.parser')
-    if not soup.find('input') or soup.find('h2').text == 'Log In Successful':
-        return response
-    else:
+    try:
+        soup = BeautifulSoup(response.text, 'html.parser')
         lt = soup.find('input', {'name': 'lt'})['value']
         execution = soup.find('input', {'name': 'execution'})['value']
         payload = {
@@ -28,16 +26,19 @@ def login(url, username=None, password=None):
         }
         response = session.post(url, data=payload, cookies=session.cookies)
         return response
+    except TypeError:
+        # 已经登录
+        return response
 
 
 def cas_login(url, username, password):
     response = login(url, username, password)
     soup = BeautifulSoup(response.text, 'html.parser')
-    while soup.find(id='msg') and (str(soup.find(id='msg').string) == 'Invalid credentials.'):
+    while soup.find_all(class_="errors"):
         print(soup.find(id='msg').string, end="\n\n")
         response = login(url)
         soup = BeautifulSoup(response.text, 'html.parser')
-    print('Log In Successful')
+        print('Log In Successful')
     return response
 
 

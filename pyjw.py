@@ -49,7 +49,7 @@ def show_score(result=None, resource_id=None):
         msg += get_detail(resource_id)
         return msg.rstrip('\n')
     else:
-        msg = '类型 课程 学分 成绩 绩点 排名'
+        msg = '类型 课程 学分 成绩 绩点 排名\n'
         for ResultDict in result:
             msg += get_kclb(ResultDict['kclb']) + ' '
             msg += ResultDict['kcmc'] + ' '
