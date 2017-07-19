@@ -33,7 +33,7 @@ def get_detail(resource_id):
     return details
 
 
-def show_score(result, resource_id=None):
+def show_score(result=None, resource_id=None):
     if not result:
         result = eval(re.findall(r'\[.*\]', get_score())[0])
     if resource_id:
