@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['score.py'],
-             pathex=['F:\\ѧϰ\\Python\\score'],
+             pathex=['F:\\ѧϰ\\Python\\AutoScore'],
              binaries=[],
              datas=[],
              hiddenimports=[],

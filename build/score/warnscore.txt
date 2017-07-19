@@ -1,29 +1,29 @@
-missing module named resource - imported by posix, F:\ѧϰ\Python\score\score.py
-missing module named posix - imported by os, F:\ѧϰ\Python\score\score.py
-missing module named _posixsubprocess - imported by subprocess, F:\ѧϰ\Python\score\score.py
-missing module named readline - imported by cmd, code, pdb, F:\ѧϰ\Python\score\score.py
-excluded module named _frozen_importlib - imported by importlib, importlib.abc, F:\ѧϰ\Python\score\score.py
-missing module named _frozen_importlib_external - imported by importlib._bootstrap, importlib, importlib.abc, F:\ѧϰ\Python\score\score.py
-missing module named _winreg - imported by platform, requests.utils, F:\ѧϰ\Python\score\score.py
+missing module named resource - imported by posix, F:\ѧϰ\Python\AutoScore\score.py
+missing module named posix - imported by os, F:\ѧϰ\Python\AutoScore\score.py
+missing module named _posixsubprocess - imported by subprocess, F:\ѧϰ\Python\AutoScore\score.py
+missing module named org - imported by pickle, F:\ѧϰ\Python\AutoScore\score.py
+missing module named readline - imported by cmd, code, pdb, F:\ѧϰ\Python\AutoScore\score.py
+excluded module named _frozen_importlib - imported by importlib, importlib.abc, F:\ѧϰ\Python\AutoScore\score.py
+missing module named _frozen_importlib_external - imported by importlib._bootstrap, importlib, importlib.abc, F:\ѧϰ\Python\AutoScore\score.py
+missing module named _winreg - imported by platform, requests.utils, F:\ѧϰ\Python\AutoScore\score.py
 missing module named _scproxy - imported by urllib.request
-missing module named java - imported by platform, F:\ѧϰ\Python\score\score.py
-missing module named 'java.lang' - imported by platform, F:\ѧϰ\Python\score\score.py, xml.sax._exceptions
-missing module named vms_lib - imported by platform, F:\ѧϰ\Python\score\score.py
-missing module named termios - imported by tty, getpass, F:\ѧϰ\Python\score\score.py
-missing module named urllib.quote_plus - imported by urllib, requests.compat
+missing module named java - imported by platform, F:\ѧϰ\Python\AutoScore\score.py
+missing module named 'java.lang' - imported by platform, F:\ѧϰ\Python\AutoScore\score.py, xml.sax._exceptions
+missing module named vms_lib - imported by platform, F:\ѧϰ\Python\AutoScore\score.py
+missing module named termios - imported by tty, getpass, F:\ѧϰ\Python\AutoScore\score.py
+missing module named urllib.unquote_plus - imported by urllib, requests.compat
+missing module named urllib.proxy_bypass_environment - imported by urllib, requests.compat
+missing module named urllib.urlencode - imported by urllib, requests.compat
 missing module named urllib.getproxies_environment - imported by urllib, requests.compat
 missing module named urllib.proxy_bypass - imported by urllib, requests.compat
-missing module named urllib.unquote_plus - imported by urllib, requests.compat
-missing module named urllib.urlencode - imported by urllib, requests.compat
-missing module named urllib.getproxies - imported by urllib, requests.compat
 missing module named urllib.unquote - imported by urllib, requests.compat
-missing module named urllib.proxy_bypass_environment - imported by urllib, requests.compat
+missing module named urllib.quote_plus - imported by urllib, requests.compat
+missing module named urllib.getproxies - imported by urllib, requests.compat
 missing module named urllib.quote - imported by urllib, requests.compat
-missing module named grp - imported by shutil, tarfile, F:\ѧϰ\Python\score\score.py
-missing module named _dummy_threading - imported by dummy_threading, F:\ѧϰ\Python\score\score.py
-missing module named 'org.python' - imported by copy, F:\ѧϰ\Python\score\score.py, xml.sax
-missing module named pwd - imported by posixpath, shutil, tarfile, http.server, webbrowser, netrc, getpass, F:\ѧϰ\Python\score\score.py
-missing module named org - imported by pickle, F:\ѧϰ\Python\score\score.py
+missing module named grp - imported by shutil, tarfile, F:\ѧϰ\Python\AutoScore\score.py
+missing module named pwd - imported by posixpath, shutil, tarfile, http.server, webbrowser, netrc, getpass, F:\ѧϰ\Python\AutoScore\score.py
+missing module named _dummy_threading - imported by dummy_threading, F:\ѧϰ\Python\AutoScore\score.py
+missing module named 'org.python' - imported by copy, F:\ѧϰ\Python\AutoScore\score.py, xml.sax
 missing module named iconv_codec - imported by bs4.dammit
 missing module named cchardet - imported by bs4.dammit
 missing module named lxml - imported by bs4.builder._lxml
