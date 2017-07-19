@@ -1,28 +1,20 @@
+# -*- coding: utf-8 -*-
 import re
 import configparser
 import pyjw
 import wechat
-from CASLogin import cas_logout
 
 
 def main():
     # 读取配置文件
     config = configparser.ConfigParser()
     config.read('config.ini')
-    # 获取新条目
     username = config['CAS']['NetID']
     password = config['CAS']['password']
-    try:
-        text = pyjw.get_score(username, password)
-        new_record_count = re.findall("recordCount:.*,name", text)[0]
-    except IndexError:
-        cas_logout()
-        text = pyjw.get_score(username, password)
-        new_record_count = re.findall("recordCount:.*,name", text)[0]
-    # 监视运行时获取到的响应内容
-    with open('record.txt', 'w') as fobj:
-        fobj.write(text + '\n\n')
+    # 获取新条目
+    text = pyjw.get_score(username, password)
     record_count = config['jwxt']['recordCount']
+    new_record_count = re.findall("recordCount:.*,name", text)[0]
     new_record_count = new_record_count.lstrip('recordCount:').rstrip(',name')
     if record_count == new_record_count:
         print("No new score.")
@@ -31,6 +23,7 @@ def main():
         result = eval(re.findall(r'\[.*\]', text)[0])
         for resource in result:
             if not (resource['resource_id']) in config['jwxt']:
+                # 组装请求，引用微信API推送文本消息
                 corpid = config['wechat']['CorpID']
                 secret = config['wechat']['Secret']
                 access_token = wechat.get_access_token(corpid, secret)

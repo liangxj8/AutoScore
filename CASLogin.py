@@ -13,6 +13,7 @@ def login(url, username=None, password=None):
         password = input('Please input your password: ')
     response = session.get(url, cookies=session.cookies)
     soup = BeautifulSoup(response.text, 'html.parser')
+    # 防止重复登录
     if not soup.find('input') or soup.find('h2').text == 'Log In Successful':
         return response
     else:
@@ -40,9 +41,6 @@ def cas_login(url, username, password):
     print('Log In Successful')
     return response
 
-
-def cas_logout():
-    session.get('https://cas.sysu.edu.cn/cas/logout', cookies=session.cookies)
 
 if __name__ == '__main__':
     config = configparser.ConfigParser()
