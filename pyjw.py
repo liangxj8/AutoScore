@@ -18,7 +18,6 @@ def get_score(username=None, password=None):
 
     url = re.findall(r'http://wjw.sysu.edu.cn/.*?&MU=', resp.text)[0]
     session.get(url)
-    # 要获取成绩的学年及学期，pylb参数含义不明（拼不出来啊2333
     form = {'year': '2016-2017', 'term': '2', 'pylb': '01'}
     return session.get('http://wjw.sysu.edu.cn/api/score', params=form, cookies=session.cookies).text
 

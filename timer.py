@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# coding=utf-8
 import time
 import sched
 from main import main
@@ -14,6 +14,6 @@ def perform(sec=60):
 
 
 if __name__ == "__main__":
-	# operate every 10 minutes
+    # operate every 10 minutes
     perform(600)
     s.run()
